@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>GPA Calculator</title>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>GPA Calculator</h2>
+
+        <label>Subject</label>
+        <input type="text" id="subject">
+
+        <label>Grade</label>
+        <select id="grade">
+            <option value="">Select</option>
+            <option>S</option>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+        </select>
+
+        <label>Credits</label>
+        <input type="number" id="credits" min="1">
+
+        <br>
+        <div class="btn-card">
+            <button onclick="addRow()">Add Row</button>
+            <button onclick="calculateGPA()">Calculate GPA</button>
+            <button onclick="resetForm()">Reset</button>
+            <button onclick="editTable()">Edit</button>
+            <button id="saveBtn" onclick="saveTable()" style="display:none;">
+                Save
+            </button>
+        </div>
+
+
+        <table id="gpaTable">
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Grade</th>
+                    <th>Credits</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <div id="result"></div>
+
+    </div>
+
+    <script>
+        function addRow() {
+
+            let s = subject.value.trim();
+            let g = grade.value;
+            let c = credits.value;
+
+            if (!s || !g || !c) {
+                alert("Fill all fields");
+                return;
+            }
+
+            let row = gpaTable.tBodies[0].insertRow();
+
+            row.insertCell(0).innerText = s;
+            row.insertCell(1).innerText = g;
+            row.insertCell(2).innerText = c;
+
+            subject.value = "";
+            grade.value = "";
+            credits.value = "";
+        }
+
+        function editTable() {
+
+            document.querySelectorAll("#gpaTable tbody tr").forEach(row => {
+
+                for (let i = 0; i < 3; i++) {
+                    row.cells[i].contentEditable = "true";
+                    row.cells[i].style.background = "#ffffff";
+                }
+
+            });
+
+            saveBtn.style.display = "inline-block";
+        }
+
+        function saveTable() {
+
+            document.querySelectorAll("#gpaTable tbody tr").forEach(row => {
+
+                for (let i = 0; i < 3; i++) {
+                    row.cells[i].contentEditable = "false";
+                    row.cells[i].style.background = "";
+                }
+
+            });
+
+            saveBtn.style.display = "none";
+        }
+
+        function gp(grade) {
+
+            return {
+                S: 10,
+                A: 9,
+                B: 8,
+                C: 7,
+                D: 6
+            } [grade] || 0;
+        }
+
+        function calculateGPA() {
+
+            let totalPoints = 0;
+            let totalCredits = 0;
+
+            document.querySelectorAll("#gpaTable tbody tr").forEach(row => {
+
+                let credit = Number(row.cells[2].innerText);
+                totalPoints += gp(row.cells[1].innerText.trim()) * credit;
+                totalCredits += credit;
+
+            });
+
+            result.innerText = totalCredits ?
+                "Congratulations! Your GPA is: " + (totalPoints / totalCredits).toFixed(2) :
+                "No subjects added.";
+        }
+
+        function resetForm() {
+
+            subject.value = "";
+            grade.value = "";
+            credits.value = "";
+
+            gpaTable.tBodies[0].innerHTML = "";
+            result.innerHTML = "";
+
+            saveBtn.style.display = "none";
+        }
+    </script>
+
+    <footer>
+        &copy; Vel Tech University | Mukum Rupa
+    </footer>
+
+</body>
+
+</html>
