@@ -11,7 +11,7 @@ html {
 body {
     margin: 0;
     min-height: 100vh;
-    padding: 30px 20px 80px;
+    padding: 30px 20px 0px;
     font-family: "Roboto", sans-serif;
     font-size: 16px;
     font-weight: 400;
@@ -161,7 +161,7 @@ footer {
 @media (min-width: 769px) and (max-width: 1200px) {
 
     body {
-        padding: 25px 20px 70px;
+        padding: 25px 20px 80px;
         font-size: 16px;
     }
 
@@ -211,7 +211,7 @@ footer {
 
     body {
         margin: 0;
-        padding: 15px 10px 70px;
+        padding: 15px 10px 6px;
         font-size: 15px;
         min-height: 100vh;
         display: flex;
