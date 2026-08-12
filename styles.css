@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
 
 * {
     box-sizing: border-box;
@@ -139,67 +140,19 @@ td {
     text-align: center;
     font-size: 20px;
     font-weight: 700;
-
     color: #1f3c88;
 }
 
 footer {
     width: 100%;
     margin-top: auto;
+    padding-top: 20px;
     text-align: center;
     font-size: 14px;
     font-weight: 400;
     color: black;
 }
 
-/* LAPTOP VIEW */
-
-@media (min-width: 769px) and (max-width: 1200px) {
-
-    body {
-        padding: 25px 20px 70px;
-        font-size: 16px;
-    }
-
-    .container {
-        max-width: 800px;
-        padding: 28px;
-    }
-
-    h2 {
-        font-size: 28px;
-        margin-bottom: 25px;
-    }
-
-    label {
-        font-size: 15px;
-    }
-
-    input,
-    select {
-        height: 46px;
-        font-size: 15px;
-    }
-
-    button {
-        min-width: 115px;
-        height: 40px;
-        font-size: 14px;
-    }
-
-    table {
-        font-size: 14px;
-    }
-
-    th,
-    td {
-        padding: 10px;
-    }
-
-    #result {
-        font-size: 19px;
-    }
-}
 
 /* MOBILE VIEW */
 
@@ -210,6 +163,7 @@ footer {
         padding: 15px 10px 20px;
         font-size: 15px;
         min-height: 94vh;
+        box-sizing: border-box;
         display: flex;
         flex-direction: column;
     }
@@ -273,8 +227,8 @@ footer {
 
     footer {
         margin-top: auto;
-        font-size: 13px;
         padding-top: 20px;
-        text-align: center;  
+        font-size: 13px;
+        text-align: center;
     }
 }
