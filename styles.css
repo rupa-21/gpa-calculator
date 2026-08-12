@@ -11,7 +11,7 @@ html {
 body {
     margin: 0;
     min-height: 100vh;
-    padding: 30px 20px 80px;
+    padding: 30px 20px 20px;
     font-family: "Roboto", sans-serif;
     font-size: 16px;
     font-weight: 400;
@@ -150,10 +150,6 @@ footer {
     font-size: 14px;
     font-weight: 400;
     color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-self: flex-end;
 }
 
 /* LAPTOP VIEW */
@@ -211,7 +207,7 @@ footer {
 
     body {
         margin: 0;
-        padding: 15px 10px 70px;
+        padding: 15px 10px 20px;
         font-size: 15px;
         min-height: 100vh;
         display: flex;
@@ -278,7 +274,7 @@ footer {
     footer {
         margin-top: auto;
         font-size: 13px;
-        display: flex;
-
+        padding-top: 20px;
+        text-align: center;  
     }
 }
